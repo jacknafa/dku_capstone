@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Fishing Detector",
+  "version": "1.0",
+  "description": "Fishing Detector",
+  "permissions": [
+    "storage",
+    "scripting",
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://mail.naver.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "account_book.png",
+      "48": "profile.png",
+      "128": "image1.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://mail.google.com/mail/u/*/",
+        "https://mail.naver.com/*",
+        "https://mail.daum.net/*",
+        "https://outlook.live.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "account_book.png",
+    "48": "profile.png",
+    "128": "image1.png"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Phish Analyzer</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 16px;
+      width: 300px;
+    }
+    #score {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    #reasons {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="score">점수를 불러오는 중...</div>
+  <div id="reasons">분석 정보를 불러오는 중...</div>
+  <select id="sensitivity">
+    <option value="low">낮음</option>
+    <option value="normal" selected>기본</option>
+    <option value="high">높음</option>
+  </select>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
