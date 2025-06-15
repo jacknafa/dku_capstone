@@ -26,8 +26,10 @@ app.get('/api/virustotal/:domain', async (req, res) => {
     console.error('VirusTotal Error:', err);
     res.status(500).json({ error: 'VT API Failed' });
   }
+  console.log(`📡 VirusTotal에 요청된 도메인: ${domain}`);
 });
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
